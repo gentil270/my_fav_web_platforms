@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INEZA FASHION BUSINESS | Dancer & Acrobat Training</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #e4002b; /* Rwanda flag red */
+            --secondary: #00a1de; /* Rwanda flag blue */
+            --accent: #fecb00; /* Rwanda flag yellow */
+            --green: #009f4d; /* Rwanda flag green */
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--dark) 0%, #16213e 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            color: var(--accent);
+            font-size: 2.5rem;
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(228, 0, 43, 0.3);
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(228, 0, 43, 0.4);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.05);
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-content h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .service-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .service-btn:hover {
+            background: #0087c1;
+        }
+
+        /* Registration Form */
+        .registration {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .form-header h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-body {
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 161, 222, 0.2);
+        }
+
+        .submit-btn {
+            background: linear-gradient(to right, var(--primary), #c10023);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: block;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(to right, #c10023, var(--primary));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(228, 0, 43, 0.3);
+        }
+
+        /* Purchase Section */
+        .purchase-section {
+            padding: 5rem 0;
+            background-color: white;
+        }
+
+        .purchase-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .purchase-header {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .purchase-header h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .purchase-body {
+            padding: 2.5rem;
+            color: white;
+        }
+
+        .purchase-info {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+
+        .payment-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .payment-instructions {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            color: #ccc;
+            text-align: center;
+        }
+
+        .payment-btn {
+            background: linear-gradient(to right, var(--accent), #e6b800);
+            color: var(--dark);
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: block;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .payment-btn:hover {
+            background: linear-gradient(to right, #e6b800, var(--accent));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(254, 203, 0, 0.4);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 5rem 0;
+            background-color: var(--light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .footer-section p {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            .mobile-menu {
+                display: none;
+            }
+            
+            .mobile-menu.active {
+                display: block;
+                width: 100%;
+                margin-top: 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>CHANSELINE<span>FASHION BUSINESS</span></h1>
+                        <p>Dancer & Acrobat Training | Wedding Entertainment</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="mobile-menu" id="mobileMenu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#registration">Register</a></li>
+                    <li><a href="#purchase">Book Performers</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2 class="fade-in">Professional Dancer & Acrobat Training</h2>
+            <p class="fade-in">Join Rwanda's premier training program for dancers, acrobats, and athletes. Perform at weddings, ceremonies, and special events with our expertly trained performers.</p>
+            <a href="#registration" class="cta-button fade-in">Register Now</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive training and entertainment solutions for all occasions</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dancer Training">
+                    </div>
+                    <div class="service-content">
+                        <h3>Professional Training</h3>
+                        <p>Learn traditional and modern dance, acrobatics, and performance skills from Rwanda's best instructors.</p>
+                        <a href="#registration" class="service-btn">Join Training</a>
+                    </div>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Wedding Performance">
+                    </div>
+                    <div class="service-content">
+                        <h3>Wedding Entertainment</h3>
+                        <p>Make your special day unforgettable with our professional dancers, acrobats, and performers.</p>
+                        <a href="#purchase" class="service-btn">Book Performers</a>
+                    </div>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Event Performance">
+                    </div>
+                    <div class="service-content">
+                        <h3>Event Performances</h3>
+                        <p>Corporate events, ceremonies, festivals - we provide entertainment for all occasions.</p>
+                        <a href="#contact" class="service-btn">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section class="registration" id="registration">
+        <div class="container">
+            <div class="section-title">
+                <h2>Training Registration</h2>
+                <p>Join our professional training program for dancers, acrobats, and athletes</p>
+            </div>
+            
+            <div class="form-container fade-in">
+                <div class="form-header">
+                    <h3>Register for Classes</h3>
+                    <p>Fill out the form below to join our training program</p>
+                </div>
+                
+                <div class="form-body">
+                    <form id="registrationForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="trainingType">Training Type *</label>
+                            <select id="trainingType" name="trainingType" required>
+                                <option value="">Select training type</option>
+                                <option value="dancer">Dancer Training</option>
+                                <option value="acrobat">Acrobat Training</option>
+                                <option value="athlete">Athlete Training</option>
+                                <option value="comedy">Comedy Performance</option>
+                                <option value="all">All Programs</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="experience">Previous Experience</label>
+                            <textarea id="experience" name="experience" rows="3" placeholder="Tell us about your previous experience in dance, acrobatics, or performance..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="schedule">Preferred Schedule</label>
+                            <select id="schedule" name="schedule">
+                                <option value="">Select preferred schedule</option>
+                                <option value="weekday">Weekday Mornings</option>
+                                <option value="weekend">Weekends</option>
+                                <option value="evening">Evening Classes</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Register for Training</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Purchase Section -->
+    <section class="purchase-section" id="purchase">
+        <div class="container">
+            <div class="section-title">
+                <h2>Book Performers</h2>
+                <p>Hire professional dancers, acrobats, and comedians for your event</p>
+            </div>
+            
+            <div class="purchase-container fade-in">
+                <div class="purchase-header">
+                    <h3>Book a Performer</h3>
+                    <p>Fill in your details to book a performer for your event</p>
+                </div>
+                
+                <div class="purchase-body">
+                    <div class="purchase-info">
+                        <h4>Professional Performer Package</h4>
+                        <p>Includes 2-hour performance by trained dancer/acrobat</p>
+                        <div class="price">$199</div>
+                        <p>Additional hours: $75/hour</p>
+                    </div>
+                    
+                    <div class="payment-form">
+                        <p class="payment-instructions">Enter your phone number and PIN to confirm booking. You will receive a confirmation SMS.</p>
+                        
+                        <form id="purchaseForm">
+                            <div class="form-group">
+                                <label for="performerType">Performer Type *</label>
+                                <select id="performerType" name="performerType" required>
+                                    <option value="">Select performer type</option>
+                                    <option value="dancer">Traditional Dancer</option>
+                                    <option value="acrobat">Acrobat</option>
+                                    <option value="athlete">Athletic Performer</option>
+                                    <option value="comedian">Comedian</option>
+                                    <option value="group">Performance Group (5 persons)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="eventDate">Event Date *</label>
+                                <input type="date" id="eventDate" name="eventDate" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="eventType">Event Type *</label>
+                                <select id="eventType" name="eventType" required>
+                                    <option value="">Select event type</option>
+                                    <option value="wedding">Wedding</option>
+                                    <option value="corporate">Corporate Event</option>
+                                    <option value="birthday">Birthday Party</option>
+                                    <option value="ceremony">Traditional Ceremony</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phoneNumber">Phone Number *</label>
+                                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter 10-digit phone number" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="pin">4-Digit PIN *</label>
+                                <input type="password" id="pin" name="pin" placeholder="Enter 4-digit PIN" maxlength="4" pattern="\d{4}" required>
+                                <small style="color: #ccc;">You will receive confirmation SMS with this PIN</small>
+                            </div>
+                            
+                            <button type="submit" class="payment-btn">
+                                <i class="fas fa-shopping-cart"></i> Book Now & Pay
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Performers Gallery</h2>
+                <p>Showcasing Rwanda's talented dancers, acrobats, and performers</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Rwandan Traditional Dancer">
+                    <div class="gallery-overlay">
+                        <h4>Traditional Dancer</h4>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1543946602-59c20f0afb9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Acrobatic Performance">
+                    <div class="gallery-overlay">
+                        <h4>Acrobatic Performance</h4>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Wedding Performance">
+                    <div class="gallery-overlay">
+                        <h4>Wedding Ceremony</h4>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Group Performance">
+                    <div class="gallery-overlay">
+                        <h4>Group Performance</h4>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1543946602-59c20f0afb9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Athletic Performance">
+                    <div class="gallery-overlay">
+                        <h4>Athletic Performer</h4>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Cultural Dance">
+                    <div class="gallery-overlay">
+                        <h4>Cultural Dance</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>INEZA FASHION BUSINESS</h4>
+                    <p>Professional training and entertainment services for dancers, acrobats, and athletes. Serving weddings, ceremonies, and special events across Rwanda.</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Kigali, Rwanda</p>
+                    <p><i class="fas fa-phone"></i> +250 788 123 456</p>
+                    <p><i class="fas fa-envelope"></i> info@inezafashion.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="#home" style="color: #ccc; text-decoration: none;">Home</a></p>
+                    <p><a href="#services" style="color: #ccc; text-decoration: none;">Services</a></p>
+                    <p><a href="#registration" style="color: #ccc; text-decoration: none;">Training Registration</a></p>
+                    <p><a href="#purchase" style="color: #ccc; text-decoration: none;">Book Performers</a></p>
+                    <p><a href="#gallery" style="color: #ccc; text-decoration: none;">Gallery</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <p>Stay connected with us on social media</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 INEZA FASHION BUSINESS. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary);"></i> for Rwanda's entertainment industry</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Form Submission
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for registering! We will contact you soon with training details.');
+            this.reset();
+        });
+        
+        document.getElementById('purchaseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const pin = document.getElementById('pin').value;
+            const performerType = document.getElementById('performerType').value;
+            const eventDate = document.getElementById('eventDate').value;
+            
+            if (phoneNumber.length !== 10 || !/^\d+$/.test(phoneNumber)) {
+                alert('Please enter a valid 10-digit phone number');
+                return;
+            }
+            
+            if (pin.length !== 4 || !/^\d+$/.test(pin)) {
+                alert('Please enter a valid 4-digit PIN');
+                return;
+            }
+            
+            alert(`Booking confirmed!\n\nPerformer: ${performerType}\nEvent Date: ${eventDate}\n\nConfirmation will be sent to: ${phoneNumber}\nYour PIN: ${pin}\n\nThank you for your booking!`);
+            this.reset();
+        });
+        
+        // Set minimum date for event booking to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('eventDate').setAttribute('min', today);
+        
+        // Fade-in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for fade elements
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        });
+        
+        window.addEventListener('scroll', fadeInOn
